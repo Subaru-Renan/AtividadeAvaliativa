@@ -2,15 +2,25 @@ public class Cofins extends ImpFederal {
     private double descontoBase;
 
 
-    public Cofins() {}
+    public Cofins() {
+        super();
+    }
 
-    public Cofins(double descontoBase) {
+    public Cofins(
+        double aliquota,
+        String sigla,
+        int codigoReceita,
+        double descontoBase
+    ) {
+        super(aliquota, sigla, codigoReceita);
         this.descontoBase = descontoBase;
     }
 
+    public double getDescontoBase() {
+        return descontoBase;
+    }
 
-    public Cofins(double aliquota, String sigla, int codigoReceita, double descontoBase, String uf) {
-        super(aliquota, sigla, codigoReceita, uf);
+    public void setDescontoBase(double descontoBase) {
         this.descontoBase = descontoBase;
     }
 

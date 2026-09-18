@@ -3,7 +3,7 @@ public class ImpEstadual extends Imposto {
 
 
     public ImpEstadual() {
-
+        super();
     }
 
     public String getUf() {
@@ -15,7 +15,7 @@ public class ImpEstadual extends Imposto {
     }
 
     public ImpEstadual(double aliquota, String sigla, String uf) {
-        super(aliquota, sigla, uf);
+        super(aliquota, sigla);
         this.uf = uf;
     }
 

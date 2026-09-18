@@ -56,7 +56,7 @@ public class NotaFiscal {
         impostos.add(imposto);
     }
 
-    public double getTotalImpostoEstadual() {
+    public double calcularTotalImpostos() {
         double total = 0;
 
         for (Imposto imposto : impostos) {
@@ -67,27 +67,43 @@ public class NotaFiscal {
     }
 
     public double getTotalFederal() {
-        return valorOperacao + getTotalImpostoEstadual();
+        return valorOperacao + calcularTotalImpostos();
     }
 
     public void imprimirValores() {
+
         System.out.println("======================================");
-        System.out.println("           NOTA FISCAL");
+        System.out.println("              NOTA FISCAL");
         System.out.println("======================================");
 
         System.out.println("ID: " + id);
         System.out.println("Número: " + numeroNota);
-        System.out.printf("Valor da compra: R$ %.2f%n", valorOperacao);
+
+        System.out.printf(
+            "Valor da operação: R$ %.2f%n",
+            valorOperacao
+        );
 
         System.out.println("--------------------------------------");
 
         for (Imposto imposto : impostos) {
 
-            double baseCalculo = imposto.calcularBc(valorOperacao);
-            double valorImposto = imposto.calcularValor(valorOperacao);
+            double baseCalculo =
+                imposto.calcularBc(valorOperacao);
+
+            double valorImposto =
+                imposto.calcularValor(valorOperacao);
 
             System.out.println("Sigla: " + imposto.getSigla());
-            System.out.println("Esfera: " + imposto.getEsfera());
+
+            System.out.println(
+                "Esfera: " + imposto.getEsfera()
+            );
+
+            System.out.printf(
+                "Alíquota: %.2f%%%n",
+                imposto.getAliquota()
+            );
 
             System.out.printf(
                 "Base de cálculo: R$ %.2f%n",
@@ -104,12 +120,12 @@ public class NotaFiscal {
 
         System.out.printf(
             "Total de impostos: R$ %.2f%n",
-            getTotalImpostoEstadual()
+            calcularTotalImpostos()
         );
 
         System.out.printf(
-            "Total da venda: R$ %.2f%n",
-            getTotalFederal()
+            "Valor total + impostos: R$ %.2f%n",
+            valorOperacao + calcularTotalImpostos()
         );
 
         System.out.println("======================================");

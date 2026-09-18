@@ -6,7 +6,7 @@ public class Imposto {
 
     }
 
-    public Imposto(double aliquota, String sigla, String uf) {
+    public Imposto(double aliquota, String sigla) {
         this.aliquota = aliquota;
         this.sigla = sigla;
     }

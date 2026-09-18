@@ -13,25 +13,23 @@ public class App {
 
         // Criando os impostos
         Icms icms = new Icms(
-             0.0,
-             "APA",
-             "ASP",
-             123
+             12.0,
+            "ICMS",
+            "GO",
+            0.0
         );
 
         Pis pis = new Pis(
              1.65,
             "PIS",
-             1234,
-             "GO"
+            1234
         );
 
         Cofins cofins = new Cofins(
-            7.6,
-            "SIMPLA",
+             7.6,
+            "COFINS",
             5678,
-            2432,
-            "GO"
+            0.0
         );
 
         // Adicionando os impostos à nota
