@@ -6,7 +6,13 @@ public class Icms extends ImpEstadual {
     }
 
 
-    
+    public double getReducaoBc() {
+        return reducaoBc;
+    }
+
+    public void setReducaoBc(double reducaoBc) {
+        this.reducaoBc = reducaoBc;
+    }
 
 
     public Icms(double aliquota, String sigla, String uf, double reducaoBc) {
